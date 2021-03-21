@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{ text }}
+        <!--对象引用-->
+        <div>uid:{{ message.uid }}</div>
+        <div>phone:{{ message.phone }}</div>
+        <!--数组引用-->
+        <div>form:address[1]</div>
+    </div>
+    <!--开发环境版本,包含了有帮助的命令行警告-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        //此处的Vue的V必须是大写
+        var app = new Vue({
+            //el设置vue实例挂载(管理)的元素
+            //可以使用css内所有的选择器
+            //不可以把vue挂载到html和body上
+            el: "#app",
+            data: {
+                //基础类型
+                text: "hello vue",
+                //对象类型
+                message: {
+                    uid: "10000",
+                    phone: "400-0000-000"
+                },
+                //数组类型
+                address: ["北京", "上海", "广东"]
+            }
+        })
+    </script>
+</body>
+
+</html>
